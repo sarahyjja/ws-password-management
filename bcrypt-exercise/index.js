@@ -19,7 +19,13 @@ bcrypt.genSalt(10, (err, salt) => {
 
 const comparePasswords = (password, hashedPassword, callback) => {
   // use bcrypt to compare the passwords and return a boolean asynchronously
-  callback(new Error("TODO"));
+
+  console.log('this is hashedPassword', hashedPassword)
+  console.log('this is password', password)
+
+  bcrypt.compare(password, hashedPassword, (err, correct) => {
+    return callback(err, correct)
+  })
 };
 
 module.exports = {
