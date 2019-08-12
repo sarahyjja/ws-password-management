@@ -6,6 +6,7 @@ const { hashPassword, comparePasswords } = require("./index.js");
 
 test("password is being hashed correctly", t =>
   hashPassword("wehey", (err, res) => {
+    // console.log("this is hashPassword", hashPassword )
     t.equal(err, null, "error should be null");
     t.equal(res.substring(0, 4), "$2a$");
     t.end();
